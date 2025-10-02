@@ -28,7 +28,7 @@ app.post("/login", (req, res) => {
 
 // Lấy OHLCV từ Binance với interval linh hoạt
 async function fetchOHLCV(symbol = "ETHUSDT", interval = "1h", limit = 200) {
-  const url = `https://testnet.binance.vision/api/v3/klines?symbol=${symbol}&interval=${interval}&limit=${limit}`;
+  const url = `https://api.binance.com/api/v3/klines?symbol=${symbol}&interval=${interval}&limit=${limit}`;
   const res = await axios.get(url);
   return res.data.map((c) => ({
     time: Math.floor(c[0] / 1000), // timestamp ms
