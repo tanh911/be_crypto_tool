@@ -4,9 +4,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node server_crypto_tool.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server_crypto_tool.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
