@@ -6,6 +6,14 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 const app = express();
+app.use(cors({
+  origin: [
+    'https://crypto-tool-ver110.vercel.app'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+}));
 app.use(cors());
 app.use(express.json());
 const SECRET_KEY = "your_jwt_secret_key";
