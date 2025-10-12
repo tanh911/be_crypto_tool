@@ -41,7 +41,7 @@ function generateMockOHLCV(limit = 200) {
 
 // Lấy OHLCV từ Binance mainnet, fallback mock khi lỗi
 async function fetchOHLCV(symbol = "ETHUSDT", interval = "1h", limit = 200) {
-  const url = `https://api.binance.com/api/v3/klines?symbol=${symbol}&interval=${interval}&limit=${limit}`;
+  const url = `https://fapi.binance.com/fapi/v1/klines?symbol=${symbol}&interval=${interval}&limit=${limit}`;
   try {
     const res = await axios.get(url, { timeout: 5000 });
     return res.data.map((c) => ({
